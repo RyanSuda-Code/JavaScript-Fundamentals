@@ -1,0 +1,13 @@
+console.log("Hello! I'm your coding fun fact guide!");
+const botName = "CodingFactDude";
+const botLocation = "Under your bed";
+const favoriteLanguage = "JavaScript";
+console.log("My name is " + botName + " and I live on " + botLocation + ".");
+console.log("My favorite programming language is " + favoriteLanguage + ".");
+let codingFact = "Did you know " + favoriteLanguage + " was invented by some guy named Eich" + ".";
+console.log(codingFact);
+codingFact = "As of 2025 about 98.9% of websites use " + favoriteLanguage + ".";
+console.log(codingFact);
+codingFact = "Before being officially named as " + favoriteLanguage + ", it was initially named as Mocha" + ".";
+console.log(codingFact);
+console.log("It was fun sharing these facts with you. Goodbye! - " + botName + " from " + botLocation + ".");
