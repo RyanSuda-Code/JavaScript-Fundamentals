@@ -23,7 +23,7 @@ console.log(selectedFortune);
 
 
 /*
-LESSONS LEARNED – Fortune Generator
+LESSONS LEARNED – (For future reference)
 
 WHERE I GOT STUCK
 - The program was printing the correct fortune
@@ -33,7 +33,7 @@ WHERE I GOT STUCK
 
 HOW I SOLVED IT
 - Realized console.log() only displays values and does not store them
-- Changed selectedFortune to `let` and initialized it as an empty string
+- Changed selectedFortune from `const` to `let` and initialized it as an empty string
 - Assigned the correct fortune inside the if / else if blocks
 - Logged selectedFortune only AFTER the decision logic finished
 
@@ -75,3 +75,4 @@ NOTE TO FUTURE ME
 - Ask for hints, not answers
 - Understanding the fix matters more than passing the test
 */
+
