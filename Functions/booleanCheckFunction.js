@@ -9,3 +9,9 @@ console.log(booWho(1));
 console.log(booWho("true"));
 console.log(booWho(false)); 
 console.log(booWho(true));
+
+
+// shorter version
+function booWho(argument) {
+  return typeof argument === "boolean";
+}
