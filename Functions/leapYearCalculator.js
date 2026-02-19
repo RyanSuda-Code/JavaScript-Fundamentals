@@ -15,5 +15,3 @@ const isLeapYear = (num) => {
 year = 2024;
 let result = isLeapYear(year);
 console.log(result);
-year = 1900;
-console.log(result);
