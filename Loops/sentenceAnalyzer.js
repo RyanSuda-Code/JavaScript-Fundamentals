@@ -1,11 +1,22 @@
 // My code
+function getVowelCount(sentence) {
+  const vowels = "aeiou";
+  let count = 0;
+
+  for (const char of sentence.toLowerCase()) { // Loop through each character in the sentence
+    if (vowels.includes(char)) { // Check if it's a vowel
+      count++;
+    }
+  }
+  return count;
+}
 
 function getConsonantCount(sentence) {
   const vowels = "aeiou";
   let count = 0;
 
   for (const char of sentence.toLowerCase()) {
-    if (/^[a-z]$/.test(char) && !vowels.includes(char)) {
+    if (/^[a-z]$/.test(char) && !vowels.includes(char)) { // Check if it's a consonant
       count++;
     }
   }
@@ -13,7 +24,7 @@ function getConsonantCount(sentence) {
 }
 
 function getPunctuationCount(sentence) {
-  const punctuation = /[.,!?;:'"()-]/;
+  const punctuation = /[.,!?;:'"()-]/; // regex to match common punctuation characters
   let count = 0;
 
   for (const char of sentence) {
