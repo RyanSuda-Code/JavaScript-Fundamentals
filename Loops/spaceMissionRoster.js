@@ -43,4 +43,30 @@ const swapCrewMembers = (crew, fromIndex, toIndex) => {
   }
   const updatedCrew = crew.slice();// Create a shallow copy of the crew array
   updatedCrew[fromIndex] = updatedCrew.splice(toIndex, 1, updatedCrew[fromIndex])[0];// Take the item from toIndex out, put the item from fromIndex in its place, then take the removed item and put it back into fromIndex—so the two items switch places.
+ 
+  return updatedCrew;
+}
+
+const updatedSquad = swapCrewMembers(squad, 2, 5);
+
+const sortByPriorityDescending = (crew) => { //bubble sort to sort crew by priority in descending order. The outer loop iterates through each element in the crew array, while the inner loop compares adjacent elements and swaps them if they are in the wrong order (if the current astronaut has a lower priority than the next one). This process is repeated until the entire array is sorted.
+  for (let i = 0; i < crew.length - 1; i++) {// Loop through each element in the crew array, except the last one. Repeat the whole sorting process again and again until the entire array is sorted. The number of iterations needed is one less than the length of the array, because after n-1 iterations, the last element will already be in place.
+    for (let j = 0; j < crew.length - i - 1; j++) {// Loop through the crew array up to the last unsorted element. Go through the array and compare neighbors, but stop before the last i elements, which are already sorted.
+      if (crew[j].priority < crew[j + 1].priority) { // Compare the priority of the current astronaut with the next one. If the current astronaut has a lower priority than the next one, swap them.
+        const temp = crew[j];
+        crew[j] = crew[j + 1];
+        crew[j + 1] = temp;
+      }
+    }
+  }
+}
+
+const getEVAReadyCrew = (crew) => {
+  const eligible = [];
+  for (const eligibleEVA of crew) {
+    if (Object.values(eligibleEVA).includes(true)) { // Check if any value in the astronaut object is true (isEVAEligible). Simplified from if (Object.values(eligibleEVA).includes(true) === true). Object.values() is used to get an array of the values of the astronaut object, and includes() checks if true is among those values.
+      eligible.push(eligibleEVA);
+    }
+  }
+  return eligible;
 }
