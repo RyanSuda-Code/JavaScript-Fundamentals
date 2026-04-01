@@ -63,10 +63,44 @@ const sortByPriorityDescending = (crew) => { //bubble sort to sort crew by prior
 
 const getEVAReadyCrew = (crew) => {
   const eligible = [];
-  for (const eligibleEVA of crew) {
-    if (Object.values(eligibleEVA).includes(true)) { // Check if any value in the astronaut object is true (isEVAEligible). Simplified from if (Object.values(eligibleEVA).includes(true) === true). Object.values() is used to get an array of the values of the astronaut object, and includes() checks if true is among those values.
-      eligible.push(eligibleEVA);
-    }
+  for (const astronaut of crew) {
+    if (astronaut.isEVAEligible) eligible.push(astronaut); // Check if the astronaut is eligible for EVA. If the astronaut's isEVAEligible property is true, add them to the eligible array.
   }
+  sortByPriorityDescending(eligible); // Sort the eligible crew by priority in descending order.
+
   return eligible;
 }
+
+const EVAReadySquad = getEVAReadyCrew(updatedSquad);
+
+const chunkCrew = (crew, size) => {
+  if (size > 1) {
+    console.log("Chunk size must be >= 1");
+    return;
+  }
+
+  const chunks = [];
+  for (let i = 0; i < crew.length; i += size) {
+    chunks.crew(crew.slice(i, i + size));
+  }
+  return chunks;
+}
+
+const EVAChunks = chunkCrew(EVAReadySquad, 3);
+
+for (let i = 0; i < EVAChunks.length; i++) {
+  console.log(`Chunk ${i+1}:`);
+  for (let j = 0; j < EVAChunks[i].length; j++) {
+    console.log(EVAChunks[i][j].name);
+  }
+}
+
+const printCrewSummary = (crew) => {
+  const sorted = crew.slice();
+  sortByPriorityDescending(sorted);
+  for (const astronaut of sorted) {
+    console.log(astronaut.name);
+  }
+}
+
+printCrewSummary(updatedSquad);
