@@ -53,7 +53,7 @@ const library = [
 console.log("Books in the Library:\n");
 
 function getBookInformation(catalog) {
-  return catalog.map(book => `${book.title} by ${book.author}`).join("\n");
+  return catalog.map(book => `${book.title} by ${book.author}`).join("\n"); // The map() method creates a new array populated with the results of calling a provided function on every element in the calling array. In this case, it transforms each book object into a string that combines the title and author. The join("\n") method then concatenates all the strings in the resulting array into a single string, with each book's information separated by a newline character for better readability.
 }
 
 console.log(getBookInformation(library));
@@ -69,7 +69,7 @@ console.log(getBookSummaries(library));
 console.log("\nList of books by Arvid Kahl:\n");
 
 function getBooksByAuthor(catalog, author) {
-  return catalog.filter((book) => book.author === author);
+  return catalog.filter((book) => book.author === author);// The filter() method creates a new array with all elements that pass the test implemented by the provided function. In this case, it filters the catalog to include only those book objects where the author property matches the specified author parameter. The result is an array of book objects written by the given author.
 }
 
 console.log(getBooksByAuthor(library, "Arvid Kahl"));
@@ -81,7 +81,7 @@ console.log("\nTotal number of pages for all library books:\n");
 
 function getTotalPages(arr) {
   const result = arr.map(book => book.pages);
-  const total = result.reduce((acc, curr) => acc + curr, 0);
+  const total = result.reduce((acc, curr) => acc + curr, 0);// The map() method creates a new array containing the number of pages for each book in the library. The reduce() method then takes this array of page counts and sums them up to get the total number of pages across all books. The initial value for the accumulator (acc) is set to 0, and for each page count (curr), it adds it to the accumulator until it processes all elements in the array, resulting in the total page count.
   return total;
 }
 
